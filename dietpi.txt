@@ -8,13 +8,13 @@
 
 ##### Language/Regional options #####
 # Locale: e.g.: "en_GB.UTF-8" / "de_DE.UTF-8" | One entry and UTF-8 ONLY!
-AUTO_SETUP_LOCALE=C.UTF-8
+AUTO_SETUP_LOCALE=en_US.UTF-8
 
 # Keyboard layout e.g.: "gb" / "us" / "de" / "fr"
-AUTO_SETUP_KEYBOARD_LAYOUT=gb
+AUTO_SETUP_KEYBOARD_LAYOUT=us
 
 # Time zone e.g.: "Europe/London" / "America/New_York" | Full list: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-AUTO_SETUP_TIMEZONE=Europe/London
+AUTO_SETUP_TIMEZONE=Asia/Kolkata
 
 ##### Network options #####
 # Enable Ethernet or WiFi adapter: 1=enable | 0=disable
@@ -28,20 +28,20 @@ AUTO_SETUP_NET_WIFI_ENABLED=0
 AUTO_SETUP_NET_ETH_FORCE_SPEED=0
 
 # WiFi country code: 2 uppercase character value (e.g. GB US DE JP): https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-AUTO_SETUP_NET_WIFI_COUNTRY_CODE=GB
+AUTO_SETUP_NET_WIFI_COUNTRY_CODE=US
 
 # Enter your static network details below, if applicable.
-AUTO_SETUP_NET_USESTATIC=0
-AUTO_SETUP_NET_STATIC_IP=192.168.0.100
+AUTO_SETUP_NET_USESTATIC=1
+AUTO_SETUP_NET_STATIC_IP=10.0.0.10
 AUTO_SETUP_NET_STATIC_MASK=255.255.255.0
-AUTO_SETUP_NET_STATIC_GATEWAY=192.168.0.1
-AUTO_SETUP_NET_STATIC_DNS=9.9.9.9 149.112.112.112
+AUTO_SETUP_NET_STATIC_GATEWAY=10.0.0.10
+AUTO_SETUP_NET_STATIC_DNS=10.0.0.10
 
 # Set to "1" to convert DHCP leased network settings into static settings automatically on first boot.
 AUTO_SETUP_DHCP_TO_STATIC=0
 
 # Hostname
-AUTO_SETUP_NET_HOSTNAME=DietPi
+AUTO_SETUP_NET_HOSTNAME=dns-server
 
 # Delay service starts at boot until network is established: 0=disabled | 1=enabled
 AUTO_SETUP_BOOT_WAIT_FOR_NETWORK=1
@@ -53,7 +53,7 @@ AUTO_SETUP_SWAPFILE_SIZE=1
 AUTO_SETUP_SWAPFILE_LOCATION=/var/swap
 
 # Set to "1" to disable HDMI/video output and framebuffers on Raspberry Pi, to reduce power consumption and memory usage: Works on RPi only!
-AUTO_SETUP_HEADLESS=0
+AUTO_SETUP_HEADLESS=1
 
 # Unmask (enable) systemd-logind service (including dbus), which is masked by default on DietPi
 AUTO_UNMASK_LOGIND=0
@@ -76,7 +76,7 @@ AUTO_SETUP_BACKUP_RESTORE=0
 
 ##### Software options #####
 # SSH server choice: 0=none/custom | -1=Dropbear | -2=OpenSSH
-AUTO_SETUP_SSH_SERVER_INDEX=-1
+AUTO_SETUP_SSH_SERVER_INDEX=-2
 
 # SSH server pubkey
 # - Public key(s) for "root" and "dietpi" users, which will be added to ~/.ssh/authorized_keys
@@ -87,7 +87,7 @@ AUTO_SETUP_SSH_SERVER_INDEX=-1
 # Logging mode choice: 0=none/custom | -1=RAMlog hourly clear | -2=RAMlog hourly save to disk + clear | -3=Rsyslog + Logrotate
 AUTO_SETUP_LOGGING_INDEX=-1
 # RAMlog max tmpfs size (MiB). 50 MiB should be fine for single use. 200+ MiB for heavy webserver access log etc.
-AUTO_SETUP_RAMLOG_MAXSIZE=50
+AUTO_SETUP_RAMLOG_MAXSIZE=300
 
 # Dependency preferences
 # - DietPi-Software installs all dependencies for selected software options automatically, which can include a webserver for web applications, a desktop for GUI applications and one usually wants a web browser on desktops.
@@ -222,7 +222,7 @@ CONFIG_NTP_MIRROR=debian.pool.ntp.org
 #	0=Allow password logins for all users, including root
 #	root=Disable password login for root user only
 #	1=Disable password logins for all users, assure that you have a valid SSH key applied!
-SOFTWARE_DISABLE_SSH_PASSWORD_LOGINS=0
+SOFTWARE_DISABLE_SSH_PASSWORD_LOGINS=root
 
 # VNC Server
 SOFTWARE_VNCSERVER_WIDTH=1280
